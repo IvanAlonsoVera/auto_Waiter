@@ -11,6 +11,21 @@ footer{
 a{
     color:white;
 }
+input{
+    border-radius: 6px;
+    background-color: #3A3B4A;
+    color:#e4a100;
+}
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #e4a100;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+  }
 /*______________________________MENU_______________________________*/
 .negro{
     background-color: black;
@@ -36,15 +51,6 @@ a{
 .btn-close{
     background-color: #e4a100;
 }
-input{
+.btnf{
     border-radius: 6px;
-    background-color: #3A3B4A;
-}
-input[type=text] {
-    box-sizing: border-box;
-    border: 3px solid #81848F;
-    color: #e4a100;
-}
-input[type=text]:focus {
-    border: 3px solid #e4a100;
 }

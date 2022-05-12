@@ -29,7 +29,7 @@
                 <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="#">Novedades</a>
                 <button class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" type="button" data-bs-toggle="modal" data-bs-target="#loginmodal">Login</button>
             </nav>
-<!--_______________________________________________________MODAL____________________________________________________________-->
+<!--____________________________________________________MODAL LOGIN_________________________________________________________-->
             <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -64,15 +64,15 @@
                                         {{ __('¿Has olvidado tu contraseña?') }}
                                     </a>
                                 @endif
-                                <button class="mt-2 col-6 text-black menu flex-sm-fill text-sm-center nav-link naranja" type="button" data-bs-toggle="modal" data-bs-target="#registromodal">¿Aun no tienes cuenta?</button>
-                                <button class="mt-2 col-6 text-black menu flex-sm-fill text-sm-center nav-link naranja">{{ __('Log in') }}</button>
+                                <button class="mt-2 col-6 text-black menu flex-sm-fill text-sm-center nav-link naranja btnf" type="button" data-bs-toggle="modal" data-bs-target="#registromodal">¿Aun no tienes cuenta?</button>
+                                <button class="mt-2 col-6 text-black menu flex-sm-fill text-sm-center nav-link naranja btnf">{{ __('Log in') }}</button>
                             </div>
                         </form>
                     </div>
                     </div>
                 </div>
                 </div>
-<!--_______________________________________________________MODAL____________________________________________________________-->
+<!--____________________________________________________MODAL Registro____________________________________________________________-->
                 <div class="modal fade" id="registromodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -85,31 +85,30 @@
 <form method="POST" action="{{ route('register') }}">
             @csrf
             <div>
-                <x-label for="name" :value="__('Name')" />
+                <x-label class="tnara col-4" for="name" :value="__('Name')" />
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
             <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
+                <x-label class="tnara col-4" for="email" :value="__('Email')" />
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
             <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+                <x-label class="tnara col-4" for="password" :value="__('Password')" />
                 <x-input id="password" class="block mt-1 w-full"
                                 type="password"
                                 name="password"
                                 required autocomplete="new-password" />
             </div>
             <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
+                <x-label class="tnara col-4" for="password_confirmation" :value="__('Confirm Password')" />
                 <x-input id="password_confirmation" class="block mt-1 w-full"
                                 type="password"
                                 name="password_confirmation" required />
             </div>
             <div class="flex items-center justify-end mt-4">
-                <x-button class="ml-4">
-                    {{ __('Resgistrarse') }}
-                </x-button>
+                <button class="mt-2 col-6 text-black menu flex-sm-fill text-sm-center nav-link naranja btnf">
+                    {{ __('Register') }}
+                </button>
             </div>
         </form>
                     </div>
