@@ -1,0 +1,50 @@
+body{
+    background-color: #81848F;
+}
+footer{
+    background-color: black;
+    padding-top: 2em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+a{
+    color:white;
+}
+/*______________________________MENU_______________________________*/
+.negro{
+    background-color: black;
+}
+.tnara{
+    color: #e4a100;
+}
+.naranja{
+    background-color: #e4a100;
+    color: #e4a100;
+}
+.menu:hover{
+    background-color: #e4a100;
+    color:black;
+}
+.menu:focus{
+    background-color: #e4a100;
+    color: black;
+}
+.modal-content{
+    background-color: #81848F;
+}
+.btn-close{
+    background-color: #e4a100;
+}
+input{
+    border-radius: 6px;
+    background-color: #3A3B4A;
+}
+input[type=text] {
+    box-sizing: border-box;
+    border: 3px solid #81848F;
+    color: #e4a100;
+}
+input[type=text]:focus {
+    border: 3px solid #e4a100;
+}
