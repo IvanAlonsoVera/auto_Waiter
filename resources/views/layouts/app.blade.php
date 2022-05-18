@@ -27,7 +27,11 @@
                 <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="#">Picoteo</a>
                 <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="#">Carta</a>
                 <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="#">Novedades</a>
-                <button class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" type="button" data-bs-toggle="modal" data-bs-target="#loginmodal">Login</button>
+                @if (Request::route()->getName() == 'index')
+                    <button class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" type="button" data-bs-toggle="modal" data-bs-target="#loginmodal">Login</button>
+                @else
+                <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="{{route('logout')}}">LogOut</a>
+                @endif    
             </nav>
 <!--____________________________________________________MODAL LOGIN_________________________________________________________-->
             <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -82,38 +86,39 @@
                         </div>
                         <div class="modal-body">
 <!--_________________________________________________________Form____________________________________________________________-->
-<form method="POST" action="{{ route('register') }}">
-            @csrf
-            <div>
-                <x-label class="tnara col-4" for="name" :value="__('Name')" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-            </div>
-            <div class="mt-4">
-                <x-label class="tnara col-4" for="email" :value="__('Email')" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-            <div class="mt-4">
-                <x-label class="tnara col-4" for="password" :value="__('Password')" />
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-            <div class="mt-4">
-                <x-label class="tnara col-4" for="password_confirmation" :value="__('Confirm Password')" />
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-            <div class="flex items-center justify-end mt-4">
-                <button class="mt-2 col-6 text-black menu flex-sm-fill text-sm-center nav-link naranja btnf">
-                    {{ __('Register') }}
-                </button>
-            </div>
-        </form>
-                    </div>
-                    </div>
-                </div>
+                            <form method="POST" action="{{ route('register') }}">
+                                        @csrf
+                                        <div class="mt-4">
+                                            <x-label class="tnara col-4" for="name" :value="__('Nombre')" />
+                                            <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required />
+                                        </div>
+                                        <div class="mt-4">
+                                            <x-label class="tnara col-4" for="email" :value="__('Email')" />
+                                            <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                                        </div>
+                                        <div class="mt-4">
+                                            <x-label class="tnara col-4" for="password" :value="__('Contraseña')" />
+                                            <x-input id="password" class="block mt-1 w-full"
+                                                            type="password"
+                                                            name="password"
+                                                            required autocomplete="new-password" />
+                                        </div>
+                                        <div class="mt-4">
+                                            <x-label class="tnara col-4" for="password_confirmation" :value="__('Confirmar Contraseña')" />
+                                            <x-input id="password_confirmation" class="block mt-1 w-full"
+                                                            type="password"
+                                                            name="password_confirmation" required />
+                                        </div>
+                                        <div class="flex items-center justify-end mt-4">
+                                            <button class="mt-2 col-6 text-black menu flex-sm-fill text-sm-center nav-link naranja btnf">
+                                                {{ __('Registrarse') }}
+                                            </button>
+                                        </div>
+            
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             <main>
                 {{ $slot }}

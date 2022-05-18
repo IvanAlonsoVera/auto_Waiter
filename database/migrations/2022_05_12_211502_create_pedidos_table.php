@@ -13,7 +13,7 @@ class CreatePedidosTable extends Migration
      */
     public function up()
     {
-        Schema::create('productos', function (Blueprint $table) {
+        Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
             $table->integer('cantidad');
             $table->unsignedBigInteger('pedido_id');
