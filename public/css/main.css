@@ -1,10 +1,13 @@
 body{
     background-color: #81848F;
 }
+p{
+    font-family: 'Nunito', sans-serif;
+}
 footer{
     background-color: black;
     padding-top: 2em;
-    position: fixed;
+    position: inherit;
     bottom: 0;
     width: 100%;
 }
@@ -23,6 +26,18 @@ input{
 }
 input:focus{
     border: 3px solid #e4a100;
+}
+.producto{
+    background-color: #3A3B4A;
+    padding: 10px;
+    border-radius: 5px;
+}
+.btntabern{
+    background-color: #940F36;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 5px;
 }
 /*______________________________MENU_______________________________*/
 .negro{

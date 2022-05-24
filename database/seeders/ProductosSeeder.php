@@ -28,15 +28,39 @@ class ProductosSeeder extends Seeder
             'precio' => 2.5,
             'ofertas' => 'no',
             'precio_ofertas' => 0,
-            'img' => "../img/nestea.png",
+            'img' => "../img/nestea.jpg",
         ]);
         DB::table("productos")->insert([
-            'nombre' => 'Cerveza',
+            'nombre' => 'Trina',
+            'tipo' => 'Bebida',
+            'precio' => 2.5,
+            'ofertas' => 'no',
+            'precio_ofertas' => 0,
+            'img' => "../img/trina.png",
+        ]);
+        DB::table("productos")->insert([
+            'nombre' => 'Fanta',
+            'tipo' => 'Bebida',
+            'precio' => 2.5,
+            'ofertas' => 'no',
+            'precio_ofertas' => 0,
+            'img' => "../img/fanta.png",
+        ]);
+        DB::table("productos")->insert([
+            'nombre' => 'Chufi',
+            'tipo' => 'Bebida',
+            'precio' => 2.5,
+            'ofertas' => 'no',
+            'precio_ofertas' => 0,
+            'img' => "../img/chufi.png",
+        ]);
+        DB::table("productos")->insert([
+            'nombre' => 'Maohu',
             'tipo' => 'Bebida',
             'precio' => 2,
             'ofertas' => 'no',
             'precio_ofertas' => 0,
-            'img' => "../img/cerveza.png",
+            'img' => "../img/maohu.png",
         ]);
         DB::table("productos")->insert([
             'nombre' => 'Bravas',

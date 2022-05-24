@@ -63,11 +63,6 @@
                                 </label>
                             </div>
                             <div class="flex items-center justify-end mt-4">
-                                @if (Route::has('password.request'))
-                                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                                        {{ __('¿Has olvidado tu contraseña?') }}
-                                    </a>
-                                @endif
                                 <button class="mt-2 col-6 text-black menu flex-sm-fill text-sm-center nav-link naranja btnf" type="button" data-bs-toggle="modal" data-bs-target="#registromodal">¿Aun no tienes cuenta?</button>
                                 <button class="mt-2 col-6 text-black menu flex-sm-fill text-sm-center nav-link naranja btnf">{{ __('Log in') }}</button>
                             </div>

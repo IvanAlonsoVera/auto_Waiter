@@ -1,21 +1,30 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\productos; 
 
 use Illuminate\Http\Request;
 
 class ListarController extends Controller
 {
     public function ListarBebidas(){
-        $bebida = bebida::All();
+        $bebidas = productos::where('tipo','bebida')->get();
+
+        return view('/bebidas',['listaBebidas' => $bebidas]);
     }
     public function ListarPicoteo(){
-        $picoteo = picoteo::All();
+        $picoteo = productos::where('tipo','picoteo')->get();
+
+        return view('/picoteo',['listaPicoteo' => $picoteo]);
     }
     public function ListarCarta(){
-        $carta = carta::All();
+        $comida = productos::where('tipo','comida')->get();
+
+        return view('/carta',['listaComida' => $comida]);
     }
     public function ListarNovedades(){
-        $novedad = novedades::All();
+        $novedad = productos::where('tipo','novedades')->get();
+
+        return view('/novedades',['listaNovedades' => $novedad]);
     }
 }
