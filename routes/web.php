@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ListarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/bebidas', [ListarController::class,'listarBebidas'])->name('listarBebida');
-Route::get('/picoteo', [ListarController::class,'listarPicoteo'])->name('listarpicoteo');
-Route::get('/carta', [ListarController::class,'listarCarta'])->name('listarcarta');
-Route::get('/novedades', [ListarController::class,'listarNovedades'])->name('listarnovedades');
+Route::get('/bebidas', [ListarController::class,'ListarBebidas'])->name('listarBebida');
+Route::get('/picoteo', [ListarController::class,'ListarPicoteo'])->name('listarpicoteo');
+Route::get('/carta', [ListarController::class,'ListarCarta'])->name('listarcarta');
+Route::get('/novedades', [ListarController::class,'ListarNovedades'])->name('listarnovedades');
