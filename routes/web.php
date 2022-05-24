@@ -22,3 +22,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+Route::get('/bebidas', [ListarController::class,'listarBebidas'])->name('listarBebida');
+Route::get('/picoteo', [ListarController::class,'listarPicoteo'])->name('listarpicoteo');
+Route::get('/carta', [ListarController::class,'listarCarta'])->name('listarcarta');
+Route::get('/novedades', [ListarController::class,'listarNovedades'])->name('listarnovedades');
