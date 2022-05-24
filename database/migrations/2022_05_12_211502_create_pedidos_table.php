@@ -16,8 +16,8 @@ class CreatePedidosTable extends Migration
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
             $table->integer('cantidad');
-            $table->unsignedBigInteger('pedido_id');
-            $table->foreign('pedido_id')->references('id')->on('productos');
+            $table->unsignedBigInteger('producto_id');
+            $table->foreign('producto_id')->references('id')->on('productos');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
