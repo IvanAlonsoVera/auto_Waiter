@@ -25,6 +25,14 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::get('/bebidas', [ListarController::class,'ListarBebidas'])->name('listarBebida');
-Route::get('/picoteo', [ListarController::class,'ListarPicoteo'])->name('listarpicoteo');
-Route::get('/carta', [ListarController::class,'ListarCarta'])->name('listarcarta');
-Route::get('/novedades', [ListarController::class,'ListarNovedades'])->name('listarnovedades');
+Route::get('/picoteo', [ListarController::class,'ListarPicoteo'])->name('listarPicoteo');
+Route::get('/carta', [ListarController::class,'ListarCarta'])->name('listarCarta');
+Route::get('/novedades', [ListarController::class,'ListarNovedades'])->name('listarNovedades');
+
+//rutas de crear producto
+Route::post('crearProducto',[PlatoController::class, 'guardar'])->middleware(['auth'])->name('crearProducto');
+
+
+//rutas del blade formularioModificarProductos se le pasa el id siempre??
+Route::get('modificarProducto/{id}',[PlatoController::class, 'mod'])->middleware(['auth'])->name('modProducto');
+Route::post('modificarProducto/{id}',[PlatoController::class, 'modBD'])->middleware(['auth'])->name('modBDProducto');
