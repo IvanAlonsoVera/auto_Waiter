@@ -1,17 +1,15 @@
 <x-app-layout>
-    @foreach ($listaBebidas as $bebida)
-        <div class="container">
-            <div class="producto row m-3">
-                <div class="col m-2">
-                    <img class="rounded-3" width="100px" src="{{ $bebida->img }}">
-                </div>
-                <div class="col m-2">
-                    <p class="text-white">{{ $bebida->nombre }}  {{ $bebida->precio }}€</p>
-                </div>
-                <div class="col m-2">
-                    <button class="btntabern">Añadir a la cesta</button>
-                </div>
-            </div>
+    <div class=" container">
+        <div class="col-12 row">
+            @foreach ($listaBebidas as $bebida)
+                <div class="card producto" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ $bebida->img }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-white">{{ $bebida->nombre }}  {{ $bebida->precio }} €</h5>
+                        <a href="#" class="btn btntabern col-12">Añadir a la bandeja</a>
+                    </div>
+                </div>    
+            @endforeach
         </div>
-    @endforeach
+    </div>
 </x-app-layout>

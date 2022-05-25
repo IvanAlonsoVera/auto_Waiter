@@ -23,6 +23,22 @@ class ProductosSeeder extends Seeder
             'img' => "../img/cocacola.png",
         ]);
         DB::table("productos")->insert([
+            'nombre' => 'Aguila',
+            'tipo' => 'Bebida',
+            'precio' => 2.5,
+            'ofertas' => 'no',
+            'precio_ofertas' => 0,
+            'img' => "../img/aguila.png",
+        ]);
+        DB::table("productos")->insert([
+            'nombre' => 'Aquarius',
+            'tipo' => 'Bebida',
+            'precio' => 2.5,
+            'ofertas' => 'no',
+            'precio_ofertas' => 0,
+            'img' => "../img/aquarius.png",
+        ]);
+        DB::table("productos")->insert([
             'nombre' => 'Nestea',
             'tipo' => 'Bebida',
             'precio' => 2.5,
@@ -100,7 +116,7 @@ class ProductosSeeder extends Seeder
             'precio' => 11,
             'ofertas' => 'no',
             'precio_ofertas' => 0,
-            'img' => "../img/espaguetis.png",
+            'img' => "../img/carbonara.png",
         ]);
         DB::table("productos")->insert([
             'nombre' => 'Sopa de cocido',
@@ -133,6 +149,46 @@ class ProductosSeeder extends Seeder
             'ofertas' => 'no',
             'precio_ofertas' => 0,
             'img' => "../img/hamburguesa.png",
+        ]);
+        DB::table("productos")->insert([
+            'nombre' => 'Aceitunas',
+            'tipo' => 'picoteo',
+            'precio' => 2,
+            'ofertas' => 'no',
+            'precio_ofertas' => 0,
+            'img' => "../img/aceitunas.png",
+        ]);
+        DB::table("productos")->insert([
+            'nombre' => 'Enbutidos',
+            'tipo' => 'picoteo',
+            'precio' => 12,
+            'ofertas' => 'no',
+            'precio_ofertas' => 0,
+            'img' => "../img/enbutidos.png",
+        ]);
+        DB::table("productos")->insert([
+            'nombre' => 'Migas',
+            'tipo' => 'picoteo',
+            'precio' => 10.5,
+            'ofertas' => 'no',
+            'precio_ofertas' => 0,
+            'img' => "../img/migas.png",
+        ]);
+        DB::table("productos")->insert([
+            'nombre' => 'Cachopo',
+            'tipo' => 'comida',
+            'precio' => 18.9,
+            'ofertas' => 'no',
+            'precio_ofertas' => 0,
+            'img' => "../img/cachopo.png",
+        ]);
+        DB::table("productos")->insert([
+            'nombre' => 'Chipiros',
+            'tipo' => 'comida',
+            'precio' => 15.3,
+            'ofertas' => 'no',
+            'precio_ofertas' => 0,
+            'img' => "../img/chipirones.png",
         ]);
     }
 }
