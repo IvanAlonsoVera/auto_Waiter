@@ -9,7 +9,7 @@ use App\Models\Pedidos;
 
 class PlatoController extends Controller
 {          
-    //-------------funciones de crear--------------------------------------------         
+    //-------------funciones de crear el producto desde el formulario--------------------------------------------         
 
     public function guardar(Request $datos){
 
