@@ -1,17 +1,15 @@
 <x-app-layout>
-    @foreach ($listaPicoteo as $picoteo)
-        <div class="container">
-            <div class="producto row m-3">
-                <div class="col m-2">
-                    <img class="rounded-3" width="100px" src="{{ $picoteo->img }}">
-                </div>
-                <div class="col m-2">
-                    <p class="text-white">{{ $picoteo->nombre }}  {{ $picoteo->precio }}€</p>
-                </div>
-                <div class="col m-2">
-                    <button class="btntabern">Añadir a la cesta</button>
-                </div>
-            </div>
+    <div class=" container">
+        <div class="row">
+            @foreach ($listaPicoteo as $picoteo)
+                <div class="card producto" style="width: 40%;">
+                    <img class="card-img-top" src="{{ $picoteo->img }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-white">{{ $picoteo->nombre }} {{ $picoteo->precio }} €</h5>
+                        <a href="#" class="btn btntabern col-12">Añadir a la bandeja</a>
+                    </div>
+                </div>    
+            @endforeach
         </div>
-    @endforeach
+    </div>
 </x-app-layout>
