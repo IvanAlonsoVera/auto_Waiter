@@ -183,12 +183,36 @@ class ProductosSeeder extends Seeder
             'img' => "../img/cachopo.png",
         ]);
         DB::table("productos")->insert([
-            'nombre' => 'Chipiros',
+            'nombre' => 'Chipirones',
             'tipo' => 'comida',
             'precio' => 15.3,
             'ofertas' => 'no',
             'precio_ofertas' => 0,
             'img' => "../img/chipirones.png",
+        ]);
+        DB::table("productos")->insert([
+            'nombre' => 'bicho',
+            'tipo' => 'novedad',
+            'precio' => 15.3,
+            'ofertas' => 'no',
+            'precio_ofertas' => 0,
+            'img' => "../img/chipirones.png",
+        ]);
+        DB::table("productos")->insert([
+            'nombre' => 'chico',
+            'tipo' => 'novedad',
+            'precio' => 18.9,
+            'ofertas' => 'no',
+            'precio_ofertas' => 0,
+            'img' => "../img/cachopo.png",
+        ]);
+        DB::table("productos")->insert([
+            'nombre' => 'los',
+            'tipo' => 'novedad',
+            'precio' => 10.5,
+            'ofertas' => 'no',
+            'precio_ofertas' => 0,
+            'img' => "../img/migas.png",
         ]);
     }
 }

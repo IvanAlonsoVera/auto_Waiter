@@ -23,7 +23,7 @@ class ListarController extends Controller
         return view('/carta',['listaComida' => $comida]);
     }
     public function ListarNovedades(){
-        $novedad = productos::where('tipo','novedades')->get();
+        $novedad = productos::where('tipo','novedad')->get();
 
         return view('/novedades',['listaNovedades' => $novedad]);
     }
