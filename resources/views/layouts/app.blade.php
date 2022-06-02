@@ -26,11 +26,10 @@
                 <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="bebidas">Bebidas</a>
                 <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="picoteo">Picoteo</a>
                 <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="carta">Carta</a>
-                <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="novedades">Novedades</a>
                 @if (Request::route()->getName() == 'index')
                     <button class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" type="button" data-bs-toggle="modal" data-bs-target="#loginmodal">Login</button>
                 @else
-                <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="{{route('logout')}}">LogOut</a>
+                    <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="{{route('logout')}}">LogOut</a>
                 @endif    
             </nav>
 <!--____________________________________________________MODAL LOGIN_________________________________________________________-->
