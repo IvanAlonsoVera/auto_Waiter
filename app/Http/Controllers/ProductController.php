@@ -15,7 +15,7 @@ class ProductController extends Controller
     public function index()
     {               //esto es el modelo
         $productos = productos::all();
-        return view('products', compact('products'));
+        return view('products', compact('productos'));
     }
    
     /**
@@ -50,8 +50,8 @@ class ProductController extends Controller
             ];
         }
            
-        session()->put('cart', $cart);
-        return redirect()->back()->with('success', 'productos added to cart successfully!');
+        session()->put('cart', $cart);              //mensaje que sale cuando añadimos un producto
+        return redirect()->back()->with('success', '¡Producto añadido correctamente!');
     }
    
     /**

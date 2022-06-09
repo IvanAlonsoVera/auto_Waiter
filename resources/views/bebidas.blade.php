@@ -6,7 +6,9 @@
                     <img class="card-img-top" src="{{ $bebida->img }}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title text-center text-white">{{ $bebida->nombre }}  {{ $bebida->precio }} €</h5>
-                        <a href="#" class="btn btntabern col-12">Añadir a la bandeja</a>
+                       <!-- <a href="#" class="btn btntabern col-12">Añadir a la bandeja</a>-->
+                        <a href="{{ route('add.to.cart', $bebida->id) }}" class="btn btntabern col-12" role="button">Añadir al carrito</a>
+
                     </div>
                 </div>    
             @endforeach
