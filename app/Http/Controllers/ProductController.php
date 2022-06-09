@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
    
 use Illuminate\Http\Request;
-use App\Models\Product;
+use App\Models\productos;
    
 class ProductController extends Controller
 {
@@ -13,9 +13,9 @@ class ProductController extends Controller
      * @return response()
      */
     public function index()
-    {
-        $products = Product::all();
-        return view('products', compact('products'));
+    {               //esto es el modelo
+        $productos = productos::all();
+        return view('productos', compact('productos'));
     }
    
     /**
@@ -35,23 +35,23 @@ class ProductController extends Controller
      */
     public function addToCart($id)
     {
-        $product = Product::findOrFail($id);
+        $productos = productos::findOrFail($id);
            
         $cart = session()->get('cart', []);
    
         if(isset($cart[$id])) {
-            $cart[$id]['quantity']++;
+            $cart[$id]['cantidad']++;
         } else {
             $cart[$id] = [
-                "name" => $product->name,
-                "quantity" => 1,
-                "price" => $product->price,
-                "image" => $product->image
+                "nombre" => $productos->nombre,
+                "cantidad" => 1,
+                "precio" => $productos->precio,
+                "img" => $productos->img
             ];
         }
            
         session()->put('cart', $cart);
-        return redirect()->back()->with('success', 'Product added to cart successfully!');
+        return redirect()->back()->with('success', 'productos added to cart successfully!');
     }
    
     /**
@@ -61,11 +61,11 @@ class ProductController extends Controller
      */
     public function update(Request $request)
     {
-        if($request->id && $request->quantity){
+        if($request->id && $request->cantidad){
             $cart = session()->get('cart');
-            $cart[$request->id]["quantity"] = $request->quantity;
+            $cart[$request->id]["cantidad"] = $request->cantidad;
             session()->put('cart', $cart);
-            session()->flash('success', 'Cart updated successfully');
+            session()->flash('success', '¡Productos añadidos correctamente!');
         }
     }
    
@@ -82,7 +82,7 @@ class ProductController extends Controller
                 unset($cart[$request->id]);
                 session()->put('cart', $cart);
             }
-            session()->flash('success', 'Product removed successfully');
+            session()->flash('success', 'productos removed successfully');
         }
     }
 }

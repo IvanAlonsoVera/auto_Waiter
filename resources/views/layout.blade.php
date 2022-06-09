@@ -32,7 +32,7 @@
                             </div>
                             @php $total = 0 @endphp
                             @foreach((array) session('cart') as $id => $details)
-                                @php $total += $details['price'] * $details['cantidad'] @endphp
+                                @php $total += $details['precio'] * $details['cantidad'] @endphp
                             @endforeach
                             <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
                                 <p>Total: <span class="text-info">$ {{ $total }}</span></p>
@@ -46,7 +46,7 @@
                                     </div>
                                     <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
                                         <p>{{ $details['nombre'] }}</p>
-                                        <span class="price text-info"> ${{ $details['price'] }}</span> <span class="count"> cantidad:{{ $details['cantidad'] }}</span>
+                                        <span class="precio text-info"> ${{ $details['precio'] }}</span> <span class="count"> cantidad:{{ $details['cantidad'] }}</span>
                                     </div>
                                 </div>
                             @endforeach
