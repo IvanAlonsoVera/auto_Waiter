@@ -11,6 +11,7 @@ class ListarController extends Controller
         $bebidas = productos::where('tipo','bebida')->get();
 
         return view('/bebidas',['listaBebidas' => $bebidas]);
+
     }
     public function ListarPicoteo(){
         $picoteo = productos::where('tipo','picoteo')->get();
