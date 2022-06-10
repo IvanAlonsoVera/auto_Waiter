@@ -32,13 +32,13 @@
                 <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="bebidas">Bebidas</a>
                 <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="picoteo">Picoteo</a>
                 <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="carta">Carta</a>
-                @if (Request::route()->getName() == 'index')
-                    <button class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" type="button" data-bs-toggle="modal" data-bs-target="#loginmodal">Login</button>
+                @Auth
+                    <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="{{route('logout')}}">LogOut</a>    
                 @else
-                    <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="{{route('logout')}}">LogOut</a>
+                    <button class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" type="button" data-bs-toggle="modal" data-bs-target="#loginmodal">Login</button>
                 @endif
                 <!--____________________________________Botón Carrito____________________________________________-->
-                <div class="dropdown">
+                <div class="dropdown mt-2 menu flex-sm-fill text-sm-center nav-link naranja">
                     <button type="button" class="btn btn-info" data-toggle="dropdown">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
                     </button>
@@ -86,7 +86,7 @@
                 @yield('content')
                  </div>
    
-@yield('scripts')
+            @yield('scripts')
                     
             </nav>
 <!--____________________________________________________MODAL LOGIN_________________________________________________________-->
