@@ -78,7 +78,7 @@
    
         var ele = $(this);
    
-        if(confirm("Are you sure want to remove?")) {
+        if(confirm("¿Seguro que quieres borrar?")) {
             $.ajax({
                 url: '{{ route('remove.from.cart') }}',
                 method: "DELETE",
