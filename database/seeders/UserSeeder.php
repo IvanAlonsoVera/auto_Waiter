@@ -20,5 +20,11 @@ class UserSeeder extends Seeder
             'email' => 'admin@autowaiter.es',
             'password' => Hash::make('admin'),
         ]);
+        DB::table("users")->insert([
+            'name' => 'pepe',
+            'rango' => "user",
+            'email' => 'pepe@autowaiter.es',
+            'password' => Hash::make('pepe'),
+        ]);
     }
 }

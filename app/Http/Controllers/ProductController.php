@@ -12,11 +12,11 @@ class ProductController extends Controller
      *
      * @return response()
      */
-    public function index()
-    {               //esto es el modelo
-        $productos = productos::all();
-        return view('products', compact('productos'));
-    }
+    // public function index()
+    // {               //esto es el modelo
+        // $productos = productos::all();
+        // return view('products', compact('productos'));
+    // }
    
     /**
      * Write code on Method
@@ -82,7 +82,7 @@ class ProductController extends Controller
                 unset($cart[$request->id]);
                 session()->put('cart', $cart);
             }
-            session()->flash('success', 'productos removed successfully');
+            session()->flash('success', '¡Eliminado correctamente!');
         }
     }
 }

@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
         <title>AutoWaiter</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -12,9 +21,7 @@
         <script src="{{ asset('js/main.js') }}"></script>
 
         
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -38,8 +45,9 @@
                     <button class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" type="button" data-bs-toggle="modal" data-bs-target="#loginmodal">Login</button>
                 @endif
                 <!--____________________________________Botón Carrito____________________________________________-->
+                
                 <div class="dropdown mt-2 menu flex-sm-fill text-sm-center nav-link naranja">
-                    <button type="button" class="btn btn-info" data-toggle="dropdown">
+                    <button type="button" class="btn btntabern" data-toggle="dropdown">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
                     </button>
                     <div class="dropdown-menu">
@@ -75,6 +83,7 @@
                         </div>
                     </div>
                 </div>
+</div>
                 <div class="container">
                 <!-- ver si esto de abajo es relevante o no-->
                 @if(session('success'))
@@ -84,7 +93,7 @@
                 @endif
             
                 @yield('content')
-                 </div>
+                </div>
    
             @yield('scripts')
                     
@@ -94,7 +103,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title tnara">La Buha</h5>
+                        <h5 class="modal-title tnara">La Búha</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -115,11 +124,11 @@
                             <div class="block mt-4">
                                 <label for="remember_me" class="inline-flex items-center">
                                     <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                                    <span class="tnara col-4">{{ __('Recuerdame') }}</span>
+                                    <span class="tnara col-4">{{ __('Recuérdame') }}</span>
                                 </label>
                             </div>
                             <div class="flex items-center justify-end mt-4">
-                                <button class="mt-2 col-6 text-black menu flex-sm-fill text-sm-center nav-link naranja btnf" type="button" data-bs-toggle="modal" data-bs-target="#registromodal">¿Aun no tienes cuenta?</button>
+                                <button class="mt-2 col-6 text-black menu flex-sm-fill text-sm-center nav-link naranja btnf" type="button" data-bs-toggle="modal" data-bs-target="#registromodal">¿Aún no tienes cuenta?</button>
                                 <button class="mt-2 col-6 text-black menu flex-sm-fill text-sm-center nav-link naranja btnf">{{ __('Log in') }}</button>
                             </div>
                         </form>
@@ -132,7 +141,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title tnara">La Buha</h5>
+                            <h5 class="modal-title tnara">La Búha</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">

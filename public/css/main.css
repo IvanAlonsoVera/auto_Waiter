@@ -40,6 +40,21 @@ input:focus{
     color: white;
     border-radius: 5px;
 }
+.fondoCart{
+    background-color: #81848F;
+}
+.letraCart{
+    color: whitesmoke;
+}
+#letraTotal{
+    text-shadow: 1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+#botonFinalizar{
+    background-color: #e4a100;
+}
+.fondoGris{
+    background-color: #3A3B4A;
+}
 /*______________________________MENU_______________________________*/
 .negro{
     background-color: black;

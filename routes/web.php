@@ -29,6 +29,9 @@ Route::get('/bebidas', [ListarController::class,'ListarBebidas'])->name('listarB
 Route::get('/picoteo', [ListarController::class,'ListarPicoteo'])->name('listarPicoteo');
 Route::get('/carta', [ListarController::class,'ListarCarta'])->name('listarCarta');
 Route::get('/novedades', [ListarController::class,'ListarNovedades'])->name('listarNovedades');
+//para el index
+Route::get('/', [ListarController::class,'ListarNovedades'])->name('listarNovedades');
+Route::get('/tramitar', [ListarController::class,'Tramitar'])->name('tramitar');
 
 //rutas de crear producto
 Route::post('crearProducto',[PlatoController::class, 'guardar'])->middleware(['auth'])->name('crearProducto');
@@ -39,7 +42,7 @@ Route::get('modificarProducto/{id}',[PlatoController::class, 'mod'])->middleware
 Route::post('modificarProducto/{id}',[PlatoController::class, 'modBD'])->middleware(['auth'])->name('modBDProducto');
 
 
-Route::get('/', [ProductController::class, 'index']);  
+
 Route::get('cart', [ProductController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('add.to.cart');
 Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart');

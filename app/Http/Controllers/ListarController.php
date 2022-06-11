@@ -28,4 +28,7 @@ class ListarController extends Controller
 
         return view('/novedades',['listaNovedades' => $novedad]);
     }
+    public function tramitar(){
+        return view('/tramitado');
+    }
 }
