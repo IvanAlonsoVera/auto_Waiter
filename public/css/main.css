@@ -83,3 +83,9 @@ input:focus{
 .btnf{
     border-radius: 6px;
 }
+.qwe{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

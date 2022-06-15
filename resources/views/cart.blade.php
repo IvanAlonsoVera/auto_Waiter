@@ -46,9 +46,8 @@
         </tr>
         <tr>
             <td colspan="5" class="text-right fondoCart">
-                <a href="{{ url('/') }}" class="btn btntabern">Añadir más</a>
-                <button class="btn almacenarPedido" id="botonFinalizar"><a href="/tramitar">Tramitar pedido</a></button> 
-
+                <a href="{{ url('/') }}" class="btn btntabern"><i class="fa "></i> Añadir más</a>
+                <button class="btn" id="botonFinalizar"><a href="/tramitar">Tramitar pedido</a></button>
             </td>
         </tr>
     </tfoot>
@@ -96,27 +95,6 @@
             });
         }
     });
-
-    // $(".almacenarPedido").click(function (e) {
-        // e.preventDefault();
-//    
-        // var ele = $(this);
-//    
-        // $.ajax({
-            // url: '{{ route('almacenarPedido') }}',
-            // method: "",
-            // data: {
-                // _token: '{{ csrf_token() }}', 
-                // id: ele.parents("tr").attr("data-id"), 
-                // cantidad: ele.parents("tr").find(".cantidad").val(),
-                // precio: ele.parents("tr").find(".precio").val(),
-                // nombre: ele.parents("tr").find(".nombre").val()
-            // },
-            // success: function (response) {
-                // window.location = '{{ route('tramitar') }}';
-            // }
-        // });
-    // });
    
 </script>
 @endsection

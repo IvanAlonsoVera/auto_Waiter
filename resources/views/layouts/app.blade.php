@@ -35,12 +35,12 @@
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
             <nav class="nav nav-pills negro p-2">
-                <a class=" flex-sm-fill text-sm-center nav-link" href="novedades"><img src="../img/buha.png" width="100px"></a>
-                <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="bebidas">Bebidas</a>
-                <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="picoteo">Picoteo</a>
-                <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="carta">Carta</a>
+                <a class="qwe flex-sm-fill text-sm-center nav-link" href="novedades"><img src="../img/buha.png" width="100px"></a>
+                <a class="qwe mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="bebidas">Bebidas</a>
+                <a class="qwe mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="picoteo">Picoteo</a>
+                <a class="qwe mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="carta">Carta</a>
                 @Auth
-                    <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="{{route('logout')}}">LogOut</a>    
+                    <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja"  href="{{route('logout')}}">LogOut</a>    
                 @else
                     <button class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" type="button" data-bs-toggle="modal" data-bs-target="#loginmodal">Login</button>
                 @endif
@@ -146,7 +146,7 @@
                         </div>
                         <div class="modal-body">
 <!--_________________________________________________________Form____________________________________________________________-->
-                            <form method="POST" action="{{ route('register') }}">
+                            <form method="POST" action="{{ route('registroUsuario') }}">
                                         @csrf
                                         <div class="mt-4">
                                             <x-label class="tnara col-4" for="name" :value="__('Nombre')" />

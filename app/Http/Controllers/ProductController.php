@@ -90,11 +90,10 @@ class ProductController extends Controller
         //se va a generar al darle a comprar
         $p = new pedidos();
          
-        //esto debería ser una cadena de texto separado por comas o puntos(para no liar a la bbdd)
         $p->productos = $datos->productos;
         $p->cantidades = $datos->cantidades;
         $p->precio = $datos->precio;
-        $p->mesa = $datos->mesa;
+        // $p->mesa = $datos->mesa;
 
         $p->save();
     }

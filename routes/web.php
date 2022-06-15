@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ListarController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,9 @@ Route::get('/carta', [ListarController::class,'ListarCarta'])->name('listarCarta
 Route::get('/novedades', [ListarController::class,'ListarNovedades'])->name('listarNovedades');
 //para el index
 Route::get('/', [ListarController::class,'ListarNovedades'])->name('listarNovedades');
+
+Route::post('/registro', [UsuarioController::class,'registroUsuario'])->name('registroUsuario');
+
 
 //rutas de pedido
 Route::get('/tramitar', [ListarController::class,'Tramitar'])->name('tramitar');
