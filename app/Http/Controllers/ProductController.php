@@ -51,7 +51,7 @@ class ProductController extends Controller
         }
            
         session()->put('cart', $cart);              //mensaje que sale cuando añadimos un producto
-        return redirect()->back()->with('success', '¡Producto añadido correctamente!');
+        return redirect()->back();
     }
    
     /**
@@ -84,5 +84,18 @@ class ProductController extends Controller
             }
             session()->flash('success', '¡Eliminado correctamente!');
         }
+    }
+
+    public function almacenarPedido(Request $datos){
+        //se va a generar al darle a comprar
+        $p = new pedidos();
+         
+        //esto debería ser una cadena de texto separado por comas o puntos(para no liar a la bbdd)
+        $p->productos = $datos->productos;
+        $p->cantidades = $datos->cantidades;
+        $p->precio = $datos->precio;
+        $p->mesa = $datos->mesa;
+
+        $p->save();
     }
 }

@@ -31,7 +31,10 @@ Route::get('/carta', [ListarController::class,'ListarCarta'])->name('listarCarta
 Route::get('/novedades', [ListarController::class,'ListarNovedades'])->name('listarNovedades');
 //para el index
 Route::get('/', [ListarController::class,'ListarNovedades'])->name('listarNovedades');
+
+//rutas de pedido
 Route::get('/tramitar', [ListarController::class,'Tramitar'])->name('tramitar');
+Route::get('/almacenarPedido/{request}', [ProductController::class,'almacenarPedido'])->name('almacenarPedido');
 
 //rutas de crear producto
 Route::post('crearProducto',[PlatoController::class, 'guardar'])->middleware(['auth'])->name('crearProducto');
