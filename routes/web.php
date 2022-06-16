@@ -55,4 +55,4 @@ Route::get('/modificar/{id}',[ProductController::class,'modId'])->middleware(['a
 Route::post('/modificar/{id}',[ProductController::class,'modificarProducto'])->middleware(['auth'])->name('modificarProducto');
 
 Route::get('/formCrear',[ProductController::class,'formCrearProducto'])->middleware(['auth'])->name('formCrear');
-Route::post('/crear',[ProductController::class,'crearProducto'])->middleware(['auth'])->name('crear');
+Route::post('/crearProducto',[ProductController::class,'crearProducto'])->middleware(['auth'])->name('crear');

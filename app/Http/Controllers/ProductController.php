@@ -117,16 +117,21 @@ class ProductController extends Controller
         $producto->save();
         return redirect('/novedades');
     }
-        
-    
     public function formCrearProducto(){
         return view('/formCrear');
     }
-    public function crearProducto(){
-        
+    public function crearProducto(request $datos){
+        $producto = new productos();
 
+        $producto->nombre = $datos->nombre;
+        $producto->tipo = $datos->tipo;
+        $producto->precio = $datos->precio;
+        $producto->img = $datos->img;
+        $producto->ofertas = "no";
+        $producto->precio_ofertas = 0;
 
-        return view('/novedades');
+        $producto->save();
+        return redirect('/novedades');
     }
     
 
