@@ -103,7 +103,14 @@ class ProductController extends Controller
     public function borrarProducto(Request $request){
         
     }
-    public function crearId(){
-        return redirect()->back();
+    public function formCrearProducto(){
+        return view('/formCrear');
     }
+    public function CrearProducto(){
+        
+
+
+        return view('/novedades');
+    }
+
 }

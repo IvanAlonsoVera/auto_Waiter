@@ -57,4 +57,6 @@ Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('r
 
 Route::get('/borrar/{id}',[ProductController::class,'borrarProducto'])->middleware(['auth'])->name('borrarProducto');
 Route::get('/modificar/{id}',[ProductController::class,'ModProducto'])->middleware(['auth'])->name('modificarProducto');
-Route::get('/crear',[ProductController::class,'crearProducto'])->middleware(['auth'])->name('crear');
+
+Route::get('/formCrear',[ProductController::class,'formCrearProducto'])->middleware(['auth'])->name('formCrear');
+Route::post('/crear',[ProductController::class,'crearProducto'])->middleware(['auth'])->name('crear');

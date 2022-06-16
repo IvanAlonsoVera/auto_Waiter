@@ -106,4 +106,9 @@ input:focus{
 }
 ::placeholder {
     color: #e4a100;
-  }
+}
+select{
+    border-radius: 5px;
+    width: 220px;
+    height: 40px;
+}
