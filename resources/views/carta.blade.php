@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class=" container">
         <div class="m-3 row">
-            @if(Auth::user()->rango == "admin")
+            @if((Auth::check()) && (Auth::user()->rango == "admin"))
                 @foreach ($listaComida as $comida)
                     <div class="card producto">
                         <img class="card-img-top" src="{{ $comida->img }}" alt="Card image cap">

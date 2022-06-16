@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class=" container">
         <div class="row">
-        @if(Auth::user()->rango == "admin")
+        @if((Auth::check()) && (Auth::user()->rango == "admin"))
                 @foreach ($listaPicoteo as $picoteo)
                 <div class="card producto" style="width: 40%;">
                         <img class="card-img-top" src="{{ $picoteo->img }}" alt="Card image cap">
