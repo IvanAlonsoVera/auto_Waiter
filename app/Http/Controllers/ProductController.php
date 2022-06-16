@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
    
 use Illuminate\Http\Request;
 use App\Models\productos;
+use Illuminate\Support\Facades\Auth;
    
 class ProductController extends Controller
 {
@@ -100,14 +101,12 @@ class ProductController extends Controller
 
     //______________________ADMIN__________________________//
 
-    public function borrarProducto(Request $id){
-        if($producto = productos::find($id)){
-            $producto->delete();
-        }
-        return redirect()->back();
+    public function borrarProducto($id){
+        $p = productos::find($id);
+            $p->delete();
+            return redirect('/novedades');
     }
-
-    public function modificarProducto(Request $datos){
+    public function modId(request $datos){
         
         $producto = productos::find($datos->id);
 
@@ -115,9 +114,8 @@ class ProductController extends Controller
         $producto->precio = $datos->precio;
         $producto->img = $datos->img;
 
-        $pl->save();
-                            //quizás hay que cambiar que lleve al dashboard
-        return redirect()->route('dashboard');
+        $producto->save();
+        return redirect('/novedades');
     }
         
     
@@ -130,5 +128,6 @@ class ProductController extends Controller
 
         return view('/novedades');
     }
+    
 
 }
