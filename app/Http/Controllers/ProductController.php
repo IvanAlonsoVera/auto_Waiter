@@ -101,13 +101,30 @@ class ProductController extends Controller
     //______________________ADMIN__________________________//
 
     public function borrarProducto(Request $id){
-
-        
+        if($producto = productos::find($id)){
+            $producto->delete();
+        }
+        return redirect()->back();
     }
+
+    public function modificarProducto(Request $datos){
+        
+        $producto = productos::find($datos->id);
+
+        $producto->nombre = $datos->nombre;
+        $producto->precio = $datos->precio;
+        $producto->img = $datos->img;
+
+        $pl->save();
+                            //quizás hay que cambiar que lleve al dashboard
+        return redirect()->route('dashboard');
+    }
+        
+    
     public function formCrearProducto(){
         return view('/formCrear');
     }
-    public function CrearProducto(){
+    public function crearProducto(){
         
 
 
