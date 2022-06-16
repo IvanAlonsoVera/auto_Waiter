@@ -101,3 +101,9 @@ input:focus{
         display: none;
     }
 }
+.tnegro{
+    color: #000;
+}
+::placeholder {
+    color: #e4a100;
+  }

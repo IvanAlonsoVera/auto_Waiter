@@ -122,33 +122,33 @@
                     <button class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" type="button" data-bs-toggle="modal" data-bs-target="#loginmodal">Login</button>
                 @endif
                 <!--____________________________________Botón Carrito____________________________________________-->
-                <div class="dropdown mt-2 menu flex-sm-fill text-sm-center nav-link naranja" id="navegacion">
-                    <button type="button" class="btn btntabern" data-toggle="dropdown">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
-                    </button>
-                    <div class="dropdown-menu">
+                
+                <div class="dropdown mt-2 menu flex-sm-fill text-sm-center nav-link naranja">
+                    <a type="button" class="btn" data-toggle="dropdown">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito <span class="badge badge-pill naranja tnegro">{{ count((array) session('cart')) }}</span>
+                    </a>
+                    <div class="dropdown-menu fondoGris">
                         <div class="row total-header-section">
                             <div class="col-lg-6 col-sm-6 col-6">
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge badge-pill naranja tnegro">{{ count((array) session('cart')) }}</span>
                             </div>
                             @php $total = 0 @endphp
                             @foreach((array) session('cart') as $id => $details)
                                 @php $total += $details['precio'] * $details['cantidad'] @endphp
                             @endforeach
                             <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
-                                <p>Total: <span class="text-info">€ {{ $total }}</span></p>
+                                <p class="text-white">Total: <span class="tnara">€ {{ $total }}</span></p>
                             </div>
                         </div>
                         @if(session('cart'))
-                                @foreach(session('cart') as $id => $details)
-                                    <div class="row cart-detail">
-                                        <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
-                                            <img src="{{ $details['img'] }}" />
-                                        </div>
-                                        <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
-                                            <p>{{ $details['nombre'] }}</p>
-                                            <span class="precio text-info"> €{{ $details['precio'] }}</span> <span class="count"> Cantidad:{{ $details['cantidad'] }}</span>
-                                        </div>
+                            @foreach(session('cart') as $id => $details)
+                                <div class="row cart-detail">
+                                    <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+                                        <img src="{{ $details['img'] }}" />
+                                    </div>
+                                    <div class="col-lg-8 col-sm-8 col-8" style="height:50px;">
+                                        <p class="tnara">{{ $details['nombre'] }}</p>
+                                        <span class="precio tnara"> €{{ $details['precio'] }}</span> <span class="count"> Cantidad:{{ $details['cantidad'] }}</span>
                                     </div>
                                 @endforeach
                             @endif
@@ -160,6 +160,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
                 <div class="container">
                 <!-- ver si esto de abajo es relevante o no-->
                 @if(session('success'))
