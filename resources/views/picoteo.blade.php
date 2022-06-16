@@ -15,7 +15,7 @@
                                 <x-label for="img" class="tnara">Ruta de la imagen</x-label>
                                 <x-input name="img" type="text" value="{{ $picoteo->img }}"></x-input><br></h5>
                                 <x-button class="btn btntabern col-12 text-white">{{ __('Modificar producto')}}</x-button>
-                                <x-button class="btn btntabern col-12 text-white" onclick="window.location.href='{{ url('/borrar/'.$picoteo->id)}}'">{{__('Borrar')}}</x-button>
+                                <a class="btn btntabern col-12 text-white" onclick="window.location.href='{{ url('/borrar/'.$picoteo->id)}}'">{{__('Borrar')}}</a>
                             </form>
                         </div>
                     </div>   
