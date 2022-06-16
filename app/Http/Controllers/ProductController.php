@@ -101,9 +101,11 @@ class ProductController extends Controller
     //______________________ADMIN__________________________//
 
     public function borrarProducto(Request $request){
+        $producto = productos::find($id);
+
         
     }
-    public function crearId(){
+    public function crearProducto(){
         return redirect()->back();
     }
 }
