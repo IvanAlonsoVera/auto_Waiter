@@ -22,8 +22,8 @@
                             <x-input name="pre" type="text" placeholder="{{ $bebida->precio }}"></x-input>
                             <x-label for="img" class="tnara">Ruta de la imagen</x-label>
                             <x-input name="img" type="text" placeholder="{{ $bebida->img }}"></x-input></h5>
-                       <!-- <a href="#" class="btn btntabern col-12">Añadir a la bandeja</a>-->
-                       <a class="btn btntabern col-12 text-white" onclick="window.location.href='{{ url('/modificar/'.$bebida->id)}}'">{{__('Modificar')}}</a>
+                       <!-- <a href="#" class="btn btntabern col-12">Añadir a la bandeja</a>-->             <!-- hay que pasar todos los parámetros a modificar-->
+                       <a class="btn btntabern col-12 text-white" onclick="window.location.href='{{ url('/modificar/'.$bebida->id.$bebida->nombre.$bebida->precio)}}'">{{__('Modificar')}}</a>
                        <a class="btn btntabern col-12 text-white" onclick="window.location.href='{{ url('/borrar/'.$bebida->id)}}'">{{__('Borrar')}}</a>
                     </div>
                 </div>   

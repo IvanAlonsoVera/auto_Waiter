@@ -33,6 +33,7 @@ Route::get('/novedades', [ListarController::class,'ListarNovedades'])->name('lis
 //para el index
 Route::get('/', [ListarController::class,'ListarNovedades'])->name('listarNovedades');
 
+//registro
 Route::post('/registro', [UsuarioController::class,'registroUsuario'])->name('registroUsuario');
 
 
@@ -40,21 +41,13 @@ Route::post('/registro', [UsuarioController::class,'registroUsuario'])->name('re
 Route::get('/tramitar', [ListarController::class,'Tramitar'])->name('tramitar');
 Route::get('/almacenarPedido/{request}', [ProductController::class,'almacenarPedido'])->name('almacenarPedido');
 
-//rutas de crear producto
-Route::post('crearProducto',[PlatoController::class, 'guardar'])->middleware(['auth'])->name('crearProducto');
-
-
-//rutas del blade formularioModificarProductos se le pasa el id siempre??
-Route::get('modificarProducto/{id}',[PlatoController::class, 'mod'])->middleware(['auth'])->name('modProducto');
-Route::post('modificarProducto/{id}',[PlatoController::class, 'modBD'])->middleware(['auth'])->name('modBDProducto');
-
-
-
+//rutas de carrito
 Route::get('cart', [ProductController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('add.to.cart');
 Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart');
 Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('remove.from.cart');
 
-Route::get('/borrar/{id}',[ProductController::class,'borrarProducto'])->middleware(['auth'])->name('borrarProducto');
-Route::get('/modificar/{id}',[ProductController::class,'ModProducto'])->middleware(['auth'])->name('modificarProducto');
+//rutas de CRUD producto
+Route::get('/borrar/{id}',[ProductController::class,'borrarProducto'])->middleware(['auth'])->name('borrar');
+Route::get('/modificar/{id}',[ProductController::class,'ModProducto'])->middleware(['auth'])->name('modificar');
 Route::get('/crear',[ProductController::class,'crearProducto'])->middleware(['auth'])->name('crear');
