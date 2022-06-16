@@ -1,34 +1,27 @@
 <x-app-layout>
-    <div class=" container">
-        <div class="col-12 row">
-            @foreach ($listaBebidas as $bebida)
-                <div class="card producto" style="width: 18rem;">
-                    <img class="card-img-top" src="{{ $bebida->img }}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title text-center text-white">{{ $bebida->nombre }}  {{ $bebida->precio }} €</h5>
-                       <!-- <a href="#" class="btn btntabern col-12">Añadir a la bandeja</a>-->
-                        <a href="{{ route('add.to.cart', $bebida->id) }}" class="btn btntabern col-12" role="button">Añadir al carrito</a>
-                    </div>
-                </div>    
-            @endforeach
-            @foreach ($listaBebidas as $bebida)
-                <div class="card producto" style="width: 18rem;">
-                    <img class="card-img-top" src="{{ $bebida->img }}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title text-center text-white">
-                            <x-label for="nom" class="tnara">Nombre</x-label>
-                            <x-input name="nom" type="text" placeholder="{{ $bebida->nombre }}"></x-input>
-                            <x-label for="pre" class="tnara">Precio</x-label>
-                            <x-input name="pre" type="text" placeholder="{{ $bebida->precio }}"></x-input>
-                            <x-label for="img" class="tnara">Ruta de la imagen</x-label>
-                            <x-input name="img" type="text" placeholder="{{ $bebida->img }}"></x-input></h5>
-                       <!-- <a href="#" class="btn btntabern col-12">Añadir a la bandeja</a>-->
-                       <a class="btn btntabern col-12 text-white" onclick="window.location.href='{{ url('/modificar/'.$bebida->id)}}'">{{__('Modificar')}}</a>
-                       <a class="btn btntabern col-12 text-white" onclick="window.location.href='{{ url('/borrar/'.$bebida->id)}}'">{{__('Borrar')}}</a>
-                    </div>
-                </div>   
-            @endforeach
-            <a class="btn btntabern col-12 text-white" onclick="window.location.href='{{ url('/crear')}}'">Crear nuevo producto</a>
+<div class="py-12 text-center">
+        <div class="m-3 row">
+            <form enctype="multipart/form-data" action="{{ url('crearPremio') }}" method="post">
+            @csrf
+                <x-label for="titulo" class="tnara col-2">Nombre del producto</x-label>
+                <x-input class="col-2 text-left" type="text" id="titulo" name="titulo"></x-input>
+                <br>
+                <x-label for="tipo" class="tnara col-2">Tipo del producto</x-label>
+                <select class="fondoGris tnara md-6 col-2 " aria-label="Default select example">
+                    <option selected value="bebida">bebida</option>
+                    <option value="picoteo">picoteo</option>
+                    <option value="comida">comida</option>
+                    <option value="novedad">novedad</option>
+                </select>
+                <br>
+                <x-label for="precio" class="tnara col-2 ">Precio</x-label>
+                <x-input class="col-2" type="text" id="precio" name="precio"></x-input>
+                <br>
+                <x-label for="img" class="tnara col-2">Ruta de la imagen</x-label>
+                <x-input class="col-2" type="text" id="img" name="img"></x-input>
+                <br>
+                <a class="btn btntabern col-4 text-white" href="">Crear Producto</a>
+            </form>
         </div>
     </div>
 </x-app-layout>
