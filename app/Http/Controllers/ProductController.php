@@ -97,4 +97,10 @@ class ProductController extends Controller
 
         $p->save();
     }
+
+    //______________________ADMIN__________________________//
+
+    public function borrarProducto(){
+        
+    }
 }
