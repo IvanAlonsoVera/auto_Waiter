@@ -28,7 +28,7 @@
                     </div>
                 </div>   
             @endforeach
-            <a class="btn btntabern col-12 text-white" href="{{route('crear')}}">Crear nuevo producto</a>
+            <a class="btn btntabern col-12 text-white" onclick="window.location.href='{{ url('/crear')}}'">Crear nuevo producto</a>
         </div>
     </div>
 </x-app-layout>
