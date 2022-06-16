@@ -55,6 +55,6 @@ Route::get('add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('a
 Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart');
 Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('remove.from.cart');
 
-Route::get('/borrar/{id}',[ProductController::class,'borrarId'])->middleware(['auth'])->name('borrarId');
-Route::get('/modificar/{id}',[ProductController::class,'ModId'])->middleware(['auth'])->name('modificarId');
-Route::get('/crear',[ProductController::class,'crearId'])->middleware(['auth'])->name('crear');
+Route::get('/borrar/{id}',[ProductController::class,'borrarProducto'])->middleware(['auth'])->name('borrarProducto');
+Route::get('/modificar/{id}',[ProductController::class,'ModProducto'])->middleware(['auth'])->name('modificarProducto');
+Route::get('/crear',[ProductController::class,'crearProducto'])->middleware(['auth'])->name('crear');
