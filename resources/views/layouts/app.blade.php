@@ -33,8 +33,85 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            <nav class="nav nav-pills negro p-2">
+
+            <div class="pos-f-t" id="desplegable">
+                <div class="collapse" id="navbarToggleExternalContent">
+                    <div class="bg-dark p-4">
+                    <nav class="nav nav-pills negro p-2">
+                        <a class="qwe flex-sm-fill text-sm-center nav-link" href="novedades"><img src="../img/buha.png" width="100px"></a>
+                        <a class="qwe mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="bebidas">Bebidas</a>
+                        <a class="qwe mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="picoteo">Picoteo</a>
+                        <a class="qwe mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="carta">Carta</a>
+                        @Auth
+                            <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja"  href="{{route('logout')}}">LogOut</a>    
+                        @else
+                            <button class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" type="button" data-bs-toggle="modal" data-bs-target="#loginmodal">Login</button>
+                        @endif
+                        <!--____________________________________Botón Carrito____________________________________________-->
+                        
+                        <div class="dropdown mt-2 menu flex-sm-fill text-sm-center nav-link naranja">
+                            <button type="button" class="btn btntabern" data-toggle="dropdown">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <div class="row total-header-section">
+                                    <div class="col-lg-6 col-sm-6 col-6">
+                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
+                                    </div>
+                                    @php $total = 0 @endphp
+                                    @foreach((array) session('cart') as $id => $details)
+                                        @php $total += $details['precio'] * $details['cantidad'] @endphp
+                                    @endforeach
+                                    <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
+                                        <p>Total: <span class="text-info">€ {{ $total }}</span></p>
+                                    </div>
+                                </div>
+                                @if(session('cart'))
+                                    @foreach(session('cart') as $id => $details)
+                                        <div class="row cart-detail">
+                                            <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+                                                <img src="{{ $details['img'] }}" />
+                                            </div>
+                                            <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
+                                                <p>{{ $details['nombre'] }}</p>
+                                                <span class="precio text-info"> €{{ $details['precio'] }}</span> <span class="count"> Cantidad:{{ $details['cantidad'] }}</span>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @endif
+                        <div class="row">
+                            <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
+                            <a href="{{ route('cart') }}" class="btn btn-primary btn-block">Ver todo</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <!-- ver si esto de abajo es relevante o no-->
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                        {{ session('success') }}
+                        </div> 
+                    @endif
+                
+                    @yield('content')
+                </div>
+   
+            @yield('scripts')
+                    
+            </nav>
+                    </div>
+                </div>
+                <nav class="navbar navbar-dark bg-dark">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>
+            </div>
+            <!--fin desplegable-->
+
+            <div class="min-h-screen bg-gray-100">
+            <nav class="nav nav-pills negro p-2" id="navegacion">
                 <a class="qwe flex-sm-fill text-sm-center nav-link" href="novedades"><img src="../img/buha.png" width="100px"></a>
                 <a class="qwe mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="bebidas">Bebidas</a>
                 <a class="qwe mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="picoteo">Picoteo</a>
@@ -45,8 +122,7 @@
                     <button class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" type="button" data-bs-toggle="modal" data-bs-target="#loginmodal">Login</button>
                 @endif
                 <!--____________________________________Botón Carrito____________________________________________-->
-                
-                <div class="dropdown mt-2 menu flex-sm-fill text-sm-center nav-link naranja">
+                <div class="dropdown mt-2 menu flex-sm-fill text-sm-center nav-link naranja" id="navegacion">
                     <button type="button" class="btn btntabern" data-toggle="dropdown">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i> Carrito <span class="badge badge-pill badge-danger">{{ count((array) session('cart')) }}</span>
                     </button>
@@ -64,26 +140,26 @@
                             </div>
                         </div>
                         @if(session('cart'))
-                            @foreach(session('cart') as $id => $details)
-                                <div class="row cart-detail">
-                                    <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
-                                        <img src="{{ $details['img'] }}" />
+                                @foreach(session('cart') as $id => $details)
+                                    <div class="row cart-detail">
+                                        <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+                                            <img src="{{ $details['img'] }}" />
+                                        </div>
+                                        <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
+                                            <p>{{ $details['nombre'] }}</p>
+                                            <span class="precio text-info"> €{{ $details['precio'] }}</span> <span class="count"> Cantidad:{{ $details['cantidad'] }}</span>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
-                                        <p>{{ $details['nombre'] }}</p>
-                                        <span class="precio text-info"> €{{ $details['precio'] }}</span> <span class="count"> Cantidad:{{ $details['cantidad'] }}</span>
-                                    </div>
+                                @endforeach
+                            @endif
+                            <div class="row">
+                                <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
+                                 <a href="{{ route('cart') }}" class="btn btn-primary btn-block">Ver todo</a>
                                 </div>
-                            @endforeach
-                        @endif
-                        <div class="row">
-                            <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
-                                <a href="{{ route('cart') }}" class="btn btn-primary btn-block">Ver todo</a>
                             </div>
                         </div>
                     </div>
                 </div>
-</div>
                 <div class="container">
                 <!-- ver si esto de abajo es relevante o no-->
                 @if(session('success'))
@@ -98,6 +174,9 @@
             @yield('scripts')
                     
             </nav>
+
+
+            
 <!--____________________________________________________MODAL LOGIN_________________________________________________________-->
             <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
