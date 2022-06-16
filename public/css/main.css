@@ -89,3 +89,9 @@ input:focus{
     justify-content: center;
     align-items: center;
 }
+.tnegro{
+    color: #000;
+}
+::placeholder {
+    color: #e4a100;
+  }
