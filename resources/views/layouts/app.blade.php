@@ -45,7 +45,7 @@
                 @Auth
                     <a class="qwe mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="{{route('logout')}}">LogOut</a>    
                 @else
-                    <button class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" type="button" data-bs-toggle="modal" data-bs-target="#loginmodal">Login</button>
+                    <button class="qwe mt-2 menu flex-sm-fill text-sm-center nav-link naranja" type="button" data-bs-toggle="modal" data-bs-target="#loginmodal">Login</button>
                 @endif
                 <!--____________________________________Botón Carrito____________________________________________-->
                 
@@ -117,7 +117,7 @@
                 <a class="qwe mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="picoteo">Picoteo</a>
                 <a class="qwe mt-2 menu flex-sm-fill text-sm-center nav-link naranja" href="carta">Carta</a>
                 @Auth
-                    <a class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja"  href="{{route('logout')}}">LogOut</a>    
+                    <a class="qwe mt-2 menu flex-sm-fill text-sm-center nav-link naranja"  href="{{route('logout')}}">LogOut</a>    
                 @else
                     <button class="mt-2 menu flex-sm-fill text-sm-center nav-link naranja" type="button" data-bs-toggle="modal" data-bs-target="#loginmodal">Login</button>
                 @endif
